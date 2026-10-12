@@ -225,7 +225,7 @@ dnspython==2.8.0
     # DNS toolkit for Python
 fqdn==1.5.1
     # Validate Fully Qualified Domain Names (FQDNs)
-graphql-core==3.2.6
+graphql-core==3.3.0
     # Core implementation of GraphQL for Python
 h11==0.16.0
     # A pure-Python, bring-your-own-I/O implementation of HTTP/1.1
@@ -243,7 +243,7 @@ markupsafe==3.0.3
     # Safely escapes characters for HTML/XML
 mdurl==0.1.2
     # URL utilities for Markdown processing
-multidict==7.1.0
+multidict==6.9.1
     # Multivalue dictionary implementation (used by aiohttp)
 pyzmq==27.1.0
     # Python bindings for ZeroMQ messaging library
