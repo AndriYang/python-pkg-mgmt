@@ -234,7 +234,7 @@ markupsafe==3.0.3
     # Safely escapes characters for HTML/XML
 mdurl==0.1.2
     # URL utilities for Markdown processing
-multidict==6.7.0
+multidict==7.1.0
     # Multivalue dictionary implementation (used by aiohttp)
 pyzmq==27.1.0
     # Python bindings for ZeroMQ messaging library
@@ -245,7 +245,7 @@ requests==2.33.0
     # Simple, elegant HTTP library
 starlette==1.3.1
     # Lightweight ASGI framework / toolkit
-strawberry-graphql==0.316.0
+strawberry-graphql==0.334.1
     # GraphQL library based on Python dataclasses
 tornado==6.5.10
     # Asynchronous networking library and web server
@@ -440,7 +440,7 @@ distro==1.9.0
     # OS information provider
 filelock==3.20.3
     # Platform-independent file locking
-fsspec==2023.10.0
+fsspec==2026.9.0
     # Filesystem specification (interface for various storage backends)
 greenlet==3.2.4
     # Lightweight coroutines for in-process concurrent programming
