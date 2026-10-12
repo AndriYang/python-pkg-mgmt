@@ -4,7 +4,7 @@
 ## Data Processing/ Models Processing  
 numpy==2.4.4
 pandas==3.0.2
-scikit-learn==1.7.1 
+#scikit-learn==1.7.1 
 joblib==1.5.2
  
 ## Visualization
