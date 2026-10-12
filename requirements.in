@@ -440,7 +440,7 @@ distro==1.9.0
     # OS information provider
 filelock==3.20.3
     # Platform-independent file locking
-fsspec==2026.9.0
+fsspec==2026.6.0
     # Filesystem specification (interface for various storage backends)
 greenlet==3.2.4
     # Lightweight coroutines for in-process concurrent programming
