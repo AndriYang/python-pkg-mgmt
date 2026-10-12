@@ -1,4 +1,34 @@
-1 package(s) resolved by pip-compile are not listed in requirements.in:
-  - jupyter-builder
+31 package(s) resolved by pip-compile are not listed in requirements.in:
+  - arro3-core
+  - azure-core
+  - azure-storage-blob
+  - certifi
+  - cffi
+  - charset-normalizer
+  - click
+  - cryptography
+  - defusedxml
+  - deprecated
+  - et-xmlfile
+  - idna
+  - isodate
+  - joblib
+  - msal
+  - msal-extensions
+  - mypy-extensions
+  - opencv-python-headless
+  - pillow
+  - playa-pdf
+  - pycparser
+  - pyjwt
+  - pypdfium2
+  - python-dateutil
+  - regex
+  - six
+  - tabulate
+  - tqdm
+  - typing-extensions
+  - urllib3
+  - wrapt
 
 Add them to the appropriate 'Transitive Libraries' section of requirements.in to make the dependency explicit.

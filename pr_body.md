@@ -1,4 +1,4 @@
-Automated update to requirements files following changes to `requirements.in` in commit 1a5a72bfd884b809ba51753efa6d7b2e80733bef.
+Automated update to requirements files following changes to `requirements.in` in commit 9a17b096ff30b3d55d4f21be2061a1f1ac162f80.
 
 **Files updated:**
 - `detailed_requirements.txt` — full pinned dependency graph (pip-compile output)
@@ -32,8 +32,38 @@ Packages that pip-compile resolved but that are not listed anywhere in `requirem
 <summary>Details</summary>
 
 ```
-1 package(s) resolved by pip-compile are not listed in requirements.in:
-  - jupyter-builder
+31 package(s) resolved by pip-compile are not listed in requirements.in:
+  - arro3-core
+  - azure-core
+  - azure-storage-blob
+  - certifi
+  - cffi
+  - charset-normalizer
+  - click
+  - cryptography
+  - defusedxml
+  - deprecated
+  - et-xmlfile
+  - idna
+  - isodate
+  - joblib
+  - msal
+  - msal-extensions
+  - mypy-extensions
+  - opencv-python-headless
+  - pillow
+  - playa-pdf
+  - pycparser
+  - pyjwt
+  - pypdfium2
+  - python-dateutil
+  - regex
+  - six
+  - tabulate
+  - tqdm
+  - typing-extensions
+  - urllib3
+  - wrapt
 
 Add them to the appropriate 'Transitive Libraries' section of requirements.in to make the dependency explicit.
 ```
@@ -51,17 +81,51 @@ A minimal kedro pipeline and kedro-azureml import test ran against the compiled 
 
 ```
 ============================= test session starts ==============================
-platform linux -- Python 3.11.16, pytest-9.1.1, pluggy-1.6.0 -- /usr/local/py-utils/venvs/pytest/bin/python
+platform linux -- Python 3.14.8, pytest-9.1.1, pluggy-1.6.0 -- /usr/local/py-utils/venvs/pytest/bin/python
 cachedir: .pytest_cache
-rootdir: /__w/kedro-azureml-python-pkg-mgmt/kedro-azureml-python-pkg-mgmt
-plugins: Faker-37.8.0, mock-2.0.0, cov-6.3.0, anyio-4.15.1
+rootdir: /__w/python-pkg-mgmt/python-pkg-mgmt
 collecting ... collected 3 items
 
-tests/smoke/test_kedro_pipeline.py::test_kedro_core_imports PASSED       [ 33%]
-tests/smoke/test_kedro_pipeline.py::test_kedro_azureml_imports PASSED    [ 66%]
-tests/smoke/test_kedro_pipeline.py::test_pipeline_runs_locally PASSED    [100%]
+tests/smoke/test_kedro_pipeline.py::test_kedro_core_imports FAILED       [ 33%]
+tests/smoke/test_kedro_pipeline.py::test_kedro_azureml_imports FAILED    [ 66%]
+tests/smoke/test_kedro_pipeline.py::test_pipeline_runs_locally FAILED    [100%]
 
-============================== 3 passed in 0.44s ===============================
+=================================== FAILURES ===================================
+___________________________ test_kedro_core_imports ____________________________
+
+    def test_kedro_core_imports():
+        """Core kedro modules must be importable."""
+>       from kedro.io import DataCatalog, MemoryDataset  # noqa: F401
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       ModuleNotFoundError: No module named 'kedro'
+
+tests/smoke/test_kedro_pipeline.py:12: ModuleNotFoundError
+__________________________ test_kedro_azureml_imports __________________________
+
+    def test_kedro_azureml_imports():
+        """kedro-azureml and its runtime dependencies must be importable.
+    
+        cachetools is a known runtime dependency of kedro-azureml that is not
+        always surfaced by pip-compile — if it goes missing, this test will catch it.
+        """
+>       import kedro_azureml  # noqa: F401
+        ^^^^^^^^^^^^^^^^^^^^
+E       ModuleNotFoundError: No module named 'kedro_azureml'
+
+tests/smoke/test_kedro_pipeline.py:23: ModuleNotFoundError
+__________________________ test_pipeline_runs_locally __________________________
+
+    def test_pipeline_runs_locally():
+        """A minimal two-node pipeline must execute end-to-end with a local runner."""
+>       from kedro.io import DataCatalog, MemoryDataset
+E       ModuleNotFoundError: No module named 'kedro'
+
+tests/smoke/test_kedro_pipeline.py:31: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/smoke/test_kedro_pipeline.py::test_kedro_core_imports - ModuleNotFoundError: No module named 'kedro'
+FAILED tests/smoke/test_kedro_pipeline.py::test_kedro_azureml_imports - ModuleNotFoundError: No module named 'kedro_azureml'
+FAILED tests/smoke/test_kedro_pipeline.py::test_pipeline_runs_locally - ModuleNotFoundError: No module named 'kedro'
+============================== 3 failed in 0.02s ===============================
 ```
 
 </details>
