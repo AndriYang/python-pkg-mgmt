@@ -94,7 +94,7 @@ azure-storage-file-datalake==12.17.0
     # Microsoft Azure Data Lake Storage Gen2 Client Library
 azure-storage-file-share==12.26.0
     # Microsoft Azure File Share Client Library
-azureml-dataprep==5.1.6
+azureml-dataprep==5.5.6
     # Azure Machine Learning Data Prep SDK
 azureml-dataprep-native==41.0.0
     # Native binaries for Azure ML Data Prep
