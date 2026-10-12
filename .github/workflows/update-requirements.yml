@@ -13,7 +13,7 @@ jobs:
     # Run every step inside the same devcontainer image used locally, so the
     # OS, Python build, and system libraries match your Docker dev environment.
     container:
-      image: mcr.microsoft.com/devcontainers/python:3.11
+      image: mcr.microsoft.com/devcontainers/python:3.14
     permissions:
       contents: write
       pull-requests: write
