@@ -1,4 +1,4 @@
-Automated update to requirements files following changes to `requirements.in` in commit 9a17b096ff30b3d55d4f21be2061a1f1ac162f80.
+Automated update to requirements files following changes to `requirements.in` in commit 05555c1d9840267c617ae5f1efefd512160cd7af.
 
 **Files updated:**
 - `detailed_requirements.txt` — full pinned dependency graph (pip-compile output)
@@ -125,7 +125,7 @@ tests/smoke/test_kedro_pipeline.py:31: ModuleNotFoundError
 FAILED tests/smoke/test_kedro_pipeline.py::test_kedro_core_imports - ModuleNotFoundError: No module named 'kedro'
 FAILED tests/smoke/test_kedro_pipeline.py::test_kedro_azureml_imports - ModuleNotFoundError: No module named 'kedro_azureml'
 FAILED tests/smoke/test_kedro_pipeline.py::test_pipeline_runs_locally - ModuleNotFoundError: No module named 'kedro'
-============================== 3 failed in 0.02s ===============================
+============================== 3 failed in 0.03s ===============================
 ```
 
 </details>
